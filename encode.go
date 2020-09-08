@@ -28,7 +28,7 @@ func (c process) MarshalXML(e *xml.Encoder, _ xml.StartElement) error {
 		return fmt.Errorf("definitions is nil")
 	}
 
-	namespace := ""
+	namespace := "soap"
 	if c.Client.Definitions.Types != nil {
 		namespace = c.Client.Definitions.Types[0].XsdSchema[0].TargetNamespace
 	}
