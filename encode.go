@@ -206,7 +206,7 @@ func (tokens *tokenData) startBody(m, n string) error {
 	}
 
 	if m == "" || n == "" {
-		return fmt.Errorf("method or namespace is empty")
+		return fmt.Errorf("method or namespace is empty %s %s", m, n)
 	}
 
 	r := xml.StartElement{
