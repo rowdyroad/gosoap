@@ -28,7 +28,7 @@ func (c process) MarshalXML(e *xml.Encoder, _ xml.StartElement) error {
 		return fmt.Errorf("definitions is nil")
 	}
 
-	namespace := "soap"
+	namespace := ""
 	if c.Client.Definitions.Types != nil {
 		namespace = c.Client.Definitions.Types[0].XsdSchema[0].TargetNamespace
 	}
@@ -205,8 +205,8 @@ func (tokens *tokenData) startBody(m, n string) error {
 		},
 	}
 
-	if m == "" || n == "" {
-		return fmt.Errorf("method or namespace is empty %s %s", m, n)
+	if m == ""  {
+		return fmt.Errorf("method is empty", m)
 	}
 
 	r := xml.StartElement{
