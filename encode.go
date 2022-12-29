@@ -215,7 +215,6 @@ func (tokens *tokenData) startBody(m, n string) error {
 			Local: m,
 		},
 		Attr: []xml.Attr{
-			{Name: xml.Name{Space: "", Local: "xmlns"}, Value: n},
 		},
 	}
 
